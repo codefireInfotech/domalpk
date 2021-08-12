@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.green,
         ),
         routes: routes,
-        home: LoginScreen(),
+        home: MeasurementScreen(),
       ),
     );
   }

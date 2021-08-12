@@ -9,16 +9,15 @@ class MeasurementFunctions {
 
     return (w * h).toString();
   }
-  String calculateinchwidth({required String inch})
+  String calculateinchwidth({required String inch })
   {
     if (inch == '' ){
       return '0';
     }
     print("inch :"+ inch);
+
     double i = double.parse(inch) - 120;
     return (i % 2).toString();
-
-
 
   }
 
