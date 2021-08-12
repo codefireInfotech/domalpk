@@ -13,7 +13,7 @@ class LargeButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).pushNamed('/HomeScreen');
+
       },
       child: Container(
         width: double.infinity,

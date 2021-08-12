@@ -3,6 +3,7 @@ import 'package:domal/Screens/HomeScreen/components/project_card.dart';
 import 'package:domal/const/Const.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -125,10 +126,37 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Expanded(child: Container()),
-              LargeButton(
-                lable: 'Logout',
-                backgrooundColor: kDarkBlueColor,
-              )
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RaisedButton(
+                    child: Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Text("Logout",
+                          style: TextStyle(
+                              fontSize: 20.0, fontWeight: FontWeight.w400)),
+                    ),
+                    onPressed: () async{
+                      SharedPreferences pref = await SharedPreferences.getInstance();
+                      pref.setString("userid","");
+                      // pref.setString("name", "");
+                      pref.setBool("islogin", false);
+
+
+                      Navigator.of(context).pop();
+                      Navigator.of(context).pushNamed('/login');
+                      //Navigator.of(context).pushNamed('/TournamentList');
+                    },
+                    splashColor: Colors.red.shade900,
+                    color: Colors.red,
+                    textColor: Colors.white,
+                  )
+                ],
+              ),
+              // LargeButton(
+              //   lable: 'Logout',
+              //   backgrooundColor: kDarkBlueColor,
+              // )
             ],
           ),
         ),

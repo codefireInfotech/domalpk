@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:domal/Components/forgot_password_text.dart';
 import 'package:domal/Components/input_field.dart';
 import 'package:domal/Components/large_button.dart';
+import 'package:domal/Screens/HomeScreen/home_screen.dart';
 import 'package:domal/const/Const.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
@@ -9,14 +10,13 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   static String routeName = '/Login';
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+    _LoginScreenState createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
@@ -28,13 +28,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
   TextEditingController _action = new TextEditingController();
 
-  checklogin() async
-  {
+  checklogin() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
-    if(pref.containsKey("islogin"))
-    {
-      if(pref.getBool("islogin")==true)
-      {
+    if (pref.containsKey("islogin")) {
+      if (pref.getBool("islogin") == true) {
         Navigator.of(context).pop();
         Navigator.of(context).pushNamed('/HomeScreen');
       }
@@ -97,70 +94,72 @@ class _LoginScreenState extends State<LoginScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    RaisedButton(
-                      child: Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Text("Log In",
-                            style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w400)),
-                      ),
-                      onPressed: () async {
-                       // print("Button Click");
-                        var user_email = _email.text.toString();
-                        var user_pass = _password.text.toString();
-                        //var check_login = _action.text.toString();
+                    Container(
+                      child: RaisedButton(
+                        child: Padding(
+                          padding: EdgeInsets.all(10.0),
+                          child: Text("Log In",
+                              style: TextStyle(
+                                  fontSize: 20.0, fontWeight: FontWeight.w400)),
+                        ),
+                        onPressed: () async {
+                          // print("Button Click");
+                          var user_email = _email.text.toString();
+                          var user_pass = _password.text.toString();
+                          var check_login = _action.text.toString();
 
-                        // Uri uri = Uri.parse(
-                        //     "https://pkwebdevelopers.com/domal/save_user_data.php");
-                        print(user_email);
-                        print(user_pass);
+                          // Uri uri = Uri.parse(
+                          //     "https://pkwebdevelopers.com/domal/save_user_data.php");
+                          print(user_email);
+                          print(user_pass);
 
-                        var response = await http.post(Uri.parse("https://pkwebdevelopers.com/domal/save_user_data.php"),
-                            body: {
-                              "user_email": _email.text.toString(),
-                              "user_pass": _password.text.toString(),
-                              "action": "check_login",
-                            });
-                        if (response.statusCode == 200) {
+                          var response = await http.post(
+                              Uri.parse(
+                                  "https://pkwebdevelopers.com/domal/save_user_data.php"),
+                              body: {
+                                "user_email": _email.text.toString(),
+                                "user_pass": _password.text.toString(),
+                                "action": "check_login",
+                              });
+                          if (response.statusCode == 200) {
+                            print(response.body);
+                            var json = jsonDecode(response.body);
+                            var status = json["status"];
+                            if (status == "Success") {
+                              var user_id = json["data"]["id"];
+                              //var name = json["userdata"]["first_name"];
 
-                          print(response.body);
-                          var json= jsonDecode(response.body);
-                          // print(json.decode(response.body));
-                          // print(json);
-                          var status=json["status"];
-                          if(status=="yes")
-                          {
-                            var user_id = json["userdata"]["user_id"];
-                            var name = json["userdata"]["name"];
+                              SharedPreferences pref =
+                                  await SharedPreferences.getInstance();
+                              pref.setString("userid", user_id);
+                              // pref.setString("first_name", name);
+                              pref.setBool("islogin", true);
 
-                            SharedPreferences pref = await SharedPreferences.getInstance();
-                            pref.setString("userid",user_id);
-                            pref.setString("name", name);
-                            pref.setBool("islogin", true);
-
-                            Navigator.of(context).pop();
-                            Navigator.of(context).pushNamed('/Register');
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => HomeScreen()));
+                            }
+                            else {
+                              Fluttertoast.showToast(
+                                  msg: "Email id or Password not Found",
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.BOTTOM,
+                                  timeInSecForIosWeb: 1,
+                                  backgroundColor: Colors.red,
+                                  textColor: Colors.white,
+                                  fontSize: 16.0);
+                            }
                           }
-                        else
-                          {
-                          Fluttertoast.showToast(
-                              msg: "Email id or Password not Found",
-                              toastLength: Toast.LENGTH_SHORT,
-                              gravity: ToastGravity.BOTTOM,
-                              timeInSecForIosWeb: 1,
-                              backgroundColor: Colors.red,
-                              textColor: Colors.white,
-                              fontSize: 16.0);
-                        }
-                        }
-                      },
-                      splashColor: Colors.red.shade900,
-                      color: Colors.red,
-                      textColor: Colors.white,
+                        },
+                        splashColor: Colors.red.shade900,
+                        color: Colors.red,
+                        textColor: Colors.white,
+                      ),
                     ),
                   ],
                 ),
                 // LargeButton(
-                //   onPressed: "LOGIN", lable: '',
+                //   lable: 'Login',
                 // ),
                 Container(
                   height: 2,

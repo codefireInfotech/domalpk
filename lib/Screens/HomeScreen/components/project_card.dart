@@ -8,7 +8,7 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        // Navigator.of(context).pushNamed('/MeasurementScreen');
+        Navigator.of(context).pushNamed('/MeasurementScreen');
       },
       child: Card(
         elevation: 6,
