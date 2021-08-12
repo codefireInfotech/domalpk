@@ -1,0 +1,183 @@
+{
+    "userId": "1",
+    "data": {
+        "2TrackDetails": {
+            "measurements": [
+                {
+                    "width": "120",
+                    "height": "120"
+                },
+                {
+                    "width": "100",
+                    "height": "100"
+                }
+            ],
+            "details": {
+                "track": "2",
+                "trackWindowWidthPlusMinus": "+",
+                "trackWindowWidth": "0.5",
+                "trackWindowHeightPlusMinus": "+",
+                "trackWindowHeight": "0.65",
+                "available2TrackFeetSize": [
+                    "10",
+                    "15",
+                    "40"
+                ],
+                "handleFeetSize": [
+                    "10",
+                    "15",
+                    "30"
+                ],
+                "interLockFeetSize": [
+                    "10",
+                    "15"
+                ],
+                "2TrackFeet": "20",
+                "2TrackFeetKG": "30",
+                "handleFeet": "20",
+                "handleFeetKG": "30",
+                "interLockFeet": "20",
+                "interLockFeetKG": "30",
+                "aluminumCostPerKG": "35",
+                "aluminumWastageCostPerKG": "35",
+                "2Track1FeetCost": "22",
+                "handle1FeetCost": "22",
+                "interLock1FeetCost": "22",
+                "glassShutterWidthPlusMinus": "+",
+                "glassShutterWidth": "0.5",
+                "glassShutterHeightPlusMinus": "+",
+                "glassShutterHeight": "0.65",
+                "rubberCost": "0.5",
+                "rubberFeet": "0.5",
+                "lockCost": "0.5",
+                "beringCost": "0.5",
+                "cornerCleat": "0.5",
+                "topUGuide": "0.5",
+                "shutterWingConnector": "0.5",
+                "interLockCap": "0.5",
+                "lockGuide": "0.5",
+                "screwCost50by8": "0.5",
+                "wallPlug": "0.5",
+                "1BunchWoolPileCost": "0.5",
+                "1BunchWoolPileFeet": "0.5",
+                "LebraPerSquareFeet": "0.5"
+            }
+        },
+        "3TrackDetails": {
+            "measurements": [
+                {
+                    "width": "320",
+                    "height": "320"
+                }
+            ],
+            "details": {
+                "track": "3",
+                "trackWindowWidthPlusMinus": "+",
+                "trackWindowWidth": "0.5",
+                "trackWindowHeightPlusMinus": "+",
+                "trackWindowHeight": "0.65",
+                "available2TrackFeetSize": [
+                    "10",
+                    "15",
+                    "40"
+                ],
+                "handleFeetSize": [
+                    "10",
+                    "15",
+                    "30"
+                ],
+                "interLockFeetSize": [
+                    "10",
+                    "15"
+                ],
+                "3TrackFeet": "20",
+                "3TrackFeetKG": "30",
+                "handleFeet": "20",
+                "handleFeetKG": "30",
+                "interLockFeet": "20",
+                "interLockFeetKG": "30",
+                "aluminumCostPerKG": "35",
+                "aluminumWastageCostPerKG": "35",
+                "3Track1FeetCost": "22",
+                "handle1FeetCost": "22",
+                "interLock1FeetCost": "22",
+                "glassShutterWidthPlusMinus": "+",
+                "glassShutterWidth": "0.5",
+                "glassShutterHeightPlusMinus": "+",
+                "glassShutterHeight": "0.65",
+                "rubberCost": "0.5",
+                "rubberFeet": "0.5",
+                "lockCost": "0.5",
+                "beringCost": "0.5",
+                "cornerCleat": "0.5",
+                "topUGuide": "0.5",
+                "shutterWingConnector": "0.5",
+                "interLockCap": "0.5",
+                "lockGuide": "0.5",
+                "screwCost50by8": "0.5",
+                "wallPlug": "0.5",
+                "1BunchWoolPileCost": "0.5",
+                "1BunchWoolPileFeet": "0.5",
+                "LebraPerSquareFeet": "0.5"
+            }
+        },
+        "4TrackDetails": {
+            "measurements": [
+                {
+                    "width": "420",
+                    "height": "420"
+                }
+            ],
+            "details": {
+                "track": "4",
+                "trackWindowWidthPlusMinus": "+",
+                "trackWindowWidth": "0.5",
+                "trackWindowHeightPlusMinus": "+",
+                "trackWindowHeight": "0.65",
+                "available3TrackFeetSize": [
+                    "10",
+                    "15",
+                    "40"
+                ],
+                "handleFeetSize": [
+                    "10",
+                    "15",
+                    "30"
+                ],
+                "interLockFeetSize": [
+                    "10",
+                    "15"
+                ],
+                "4TrackFeet": "20",
+                "4TrackFeetKG": "30",
+                "handleFeet": "20",
+                "handleFeetKG": "30",
+                "interLockFeet": "20",
+                "interLockFeetKG": "30",
+                "aluminumCostPerKG": "35",
+                "aluminumWastageCostPerKG": "35",
+                "4Track1FeetCost": "22",
+                "handle1FeetCost": "22",
+                "interLock1FeetCost": "22",
+                "glassShutterWidthPlusMinus": "+",
+                "glassShutterWidth": "0.5",
+                "glassShutterHeightPlusMinus": "+",
+                "glassShutterHeight": "0.65",
+                "rubberCost": "0.5",
+                "rubberFeet": "0.5",
+                "lockCost": "0.5",
+                "beringCost": "0.5",
+                "cornerCleat": "0.5",
+                "topUGuide": "0.5",
+                "shutterWingConnector": "0.5",
+                "interLockCap": "0.5",
+                "lockGuide": "0.5",
+                "screwCost50by8": "0.5",
+                "wallPlug": "0.5",
+                "1BunchWoolPileCost": "0.5",
+                "1BunchWoolPileFeet": "0.5",
+                "LebraPerSquareFeet": "0.5"
+            }
+        }
+    }
+}
